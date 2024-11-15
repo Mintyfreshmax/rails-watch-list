@@ -1,0 +1,7 @@
+<% @lists.each do |list| %>
+<div class='list'>
+<h2><%= link_to list.name, list_path(list) %></h2>
+<%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+</div>
+<%end%>
+<%= link_to 'add new list', new_list_path %>

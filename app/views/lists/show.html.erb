@@ -1,0 +1,20 @@
+<h1>Add Movie to List</h1>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :movie_id, collection: @movies %>
+  <%= f.input :comment %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit %>
+<% end %>
+
+<h2>Movies in this List</h2>
+<ul>
+ <% @bookmarks.each do |bookmark| %>
+      <li>
+        <strong>Movie:</strong> <%= bookmark.movie.title %><br>
+        <strong>Comment:</strong> <%= bookmark.comment %>
+        <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %>" style="width: 200px; height: auto;">
+       <h3><%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-danger'%></h3>
+      </li>
+</ul>
+ <% end %>
