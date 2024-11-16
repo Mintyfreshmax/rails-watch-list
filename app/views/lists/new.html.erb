@@ -1,7 +1,16 @@
-<h1>New List</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://static1.srcdn.com/wordpress/wp-content/uploads/2023/11/greatest-movies-of-all-time.jpg, height: 300, crop: :fill)">
 
-<%= simple_form_for @list do |f| %>
-<%= f.input :name %>
-<%= f.input :photo, as: :file %>
-<%= f.button :submit %>
-<% end %>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8">
+        <h1>New List</h1>
+
+        <%= simple_form_for @list do |f| %>
+        <%= f.input :name %>
+        <%= f.input :photo, as: :file %>
+        <%= f.button :submit %>
+        <% end %>
+     </div>
+    </div>
+  </div>
+</div>

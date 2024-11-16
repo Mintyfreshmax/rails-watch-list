@@ -1,7 +1,24 @@
-<% @lists.each do |list| %>
-<div class='list'>
-<h2><%= link_to list.name, list_path(list) %></h2>
-<%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1643553517154-24eb7fd86437?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8">
+            <h1 class="display-4 text-white text-center">Watch List</h1>
+
+    <h3 class="text-center"><%= link_to 'Add New List', new_list_path %></h3>
+
+      </div>
+    </div>
+  </div>
 </div>
-<%end%>
-<%= link_to 'add new list', new_list_path %>
+<div class="container">
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class='card' style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
+        <h2><%= link_to list.name, list_path(list) %></h2>
+        <h3 class='text-center'><%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-danger'%></h3>
+
+      </div>
+    <%end%>
+  </div>
+</div>

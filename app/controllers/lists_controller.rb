@@ -22,7 +22,7 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    @lists = List.find(params[:id])
+    @list = List.find(params[:id])
     @list.destroy
     redirect_to root_path, status: :see_other
   end
