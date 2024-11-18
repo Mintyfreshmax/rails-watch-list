@@ -33,6 +33,14 @@ gem 'faker', '~> 3.2'
 
 gem "dotenv-rails"
 gem "cloudinary"
+  gem "bootstrap", "~> 5.2"
+
+  gem "autoprefixer-rails"
+
+  gem "font-awesome-sass", "~> 6.1"
+
+
+  gem "sassc-rails"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -65,14 +73,6 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  gem "bootstrap", "~> 5.2"
-
-  gem "autoprefixer-rails"
-
-  gem "font-awesome-sass", "~> 6.1"
-
-
-  gem "sassc-rails"
   # gem "spring"
 end
 
